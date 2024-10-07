@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rooms>
+  <room name="dining room">
+    <location name="dining table" isBeacon="true" isPlacement="true" />
+  </room>
+
+  <room name="kitchen">
+    <location name="trash bin" nlu_name="trashbin" isBeacon="true" isPlacement="true" />
+    <location name="trash" nlu_name="trashbin" isBeacon="true" isPlacement="true" />
+    <location name="dish washer" nlu_name="dishwasher" isBeacon="true" isPlacement="true" />
+    <location name="potted plant" isBeacon="true" isPlacement="true"/>
+    <location name="kitchen table" isBeacon="true" isPlacement="true" />
+    <location name="chairs" isBeacon="true" isPlacement="true" />
+    <location name="chair" nlu_name="chairs" isBeacon="true" isPlacement="true" />
+    <location name="pantry" isBeacon="true" isPlacement="true" />
+    <location name="refrigerator" isBeacon="true" isPlacement="true" />
+    <location name="counter" isBeacon="true" isPlacement="true" />
+  </room>
+
+  <room name="bedroom">
+    <location name="nightstand" isBeacon="true" isPlacement="true" />
+  </room>
+
+  <room name="living room">
+    <location name="tv stand" isBeacon="true" isPlacement="true" />
+    <location name="storage rack" isBeacon="true" isPlacement="true" />
+    <location name="lamp" isBeacon="true" isPlacement="true" />
+    <location name="side tables" isBeacon="true" isPlacement="true" />
+    <location name="side table" nlu_name="side tables" isBeacon="true" isPlacement="true" />
+    <location name="sofa" isBeacon="true" isPlacement="true" />
+    <location name="book shelf" nlu_name="bookshelf" isBeacon="true" isPlacement="true" />
+    <location name="entrance" isBeacon="true" isPlacement="true" />
+  </room>
+</rooms>

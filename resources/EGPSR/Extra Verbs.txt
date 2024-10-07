@@ -1,0 +1,15 @@
+pick
+take
+count
+offer
+close
+open
+tell
+meet
+put
+describe
+escort
+answer
+bring
+speak
+say

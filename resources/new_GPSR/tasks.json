@@ -1,0 +1,324 @@
+{
+    "vbanswer": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "speak"
+        },
+        "source": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "gesture", "default": "person"}, {"source": "pose", "default": "person"}],
+            "optional": true
+        },
+        "person2": {
+            "source": ["gesture", "pose"],
+            "optional": true
+        },
+        "whattosay": {
+            "source": [],
+            "optional": false,
+            "default": "answer a question"
+        }
+    },
+    "vbbring": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "bring"
+        },
+        "source": {
+            "source": ["location"],
+            "optional": true
+        },
+        "person1": {
+            "source": [],
+            "optional": false,
+            "default": "operator"
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": true
+        }
+    },
+    "vbcount": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "tellcount"
+        },
+        "destination": {
+            "source": ["location", "room"],
+            "optional": false
+        },
+        "person1": {
+            "source": [
+                {"source": "gesture", "default": "people"}, 
+                {"source": "pose", "default": "people"}, 
+                {"source": "colorClothes", "default": "people"}
+            ],
+            "optional": true
+        },
+        "person2": {
+            "source": ["colorClothes", "gesture", "pose"],
+            "optional": true
+        },
+        "object1": {
+            "source": ["plurCat"],
+            "optional": true
+        }
+    },
+    "vbdeliver": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "deliver"
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [
+                "name", 
+                {"source": "gesture", "default": "person"}, 
+                {"source": "pose", "default": "person"}
+            ],
+            "optional": false,
+            "default": "operator"
+        },
+        "person2": {
+            "source": ["gesture", "pose"],
+            "optional": true
+        },
+        "object1": {
+            "source": [],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "vbfind": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "find"
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": true
+        },
+        "person1": {
+            "source": [
+                {"source": "gesture", "default": "person"}, 
+                {"source": "pose", "default": "person"}
+            ],
+            "optional": false,
+            "default": {"prev_fact": "person1"}
+        },
+        "person2": {
+            "source": ["gesture", "pose"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false,
+            "default": {"prev_fact": "destination"}
+        }
+    },
+    "vbfollow": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "follow"
+        },
+        "source": {
+            "source": ["location"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [
+                {"source": "gesture", "default": "person"}, 
+                {"source": "pose", "default": "person"}, 
+                "name"
+            ],
+            "optional": false,
+            "default": {"source": "pron", "prev_fact": "person1"}
+        },
+        "person2": {
+            "source": ["gesture", "pose"],
+            "optional": true
+        }
+    },
+    "vbgo": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "gopl"
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        }
+    },
+    "vbgreet": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "greet"
+        },
+        "person1": {
+            "source": ["name", {"source": "colorClothe", "default": "person"}],
+            "optional": false
+        },
+        "person2": {
+            "source": ["colorClothe"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        }
+    },
+    "vbguide": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "guide"
+        },
+        "source": {
+            "source": ["location"],
+            "optional": false,
+            "default": {"prev_fact": "source"}
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        },
+        "person1": {
+            "source": [
+                "name", 
+                {"source": "gesture", "default": "person"}, 
+                {"source": "pose", "default": "person"}, 
+                {"source": "colorClothe", "default": "person"}
+            ],
+            "optional": false,
+            "default": {"prev_fact": "person1"}
+        },
+        "person2": {
+            "source": ["colorClothe", "gesture", "pose"],
+            "optional": true
+        }
+    },
+    "vbmeet": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "meet"
+        },
+        "destination": {
+            "source": ["location", "room"],
+            "optional": false,
+            "default": {"prev_fact": "destination"}
+        },
+        "person1": {
+            "source": ["name"],
+            "optional": false
+        }
+    },
+    "vbplace": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "place"
+        },
+        "destination": {
+            "source": ["location"],
+            "optional": false
+        },
+        "object1": {
+            "source": [],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "vbtake": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "take"
+        },
+        "source": {
+            "source": ["location"],
+            "optional": false,
+            "default": {"prev_fact": "source"}
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "vbtalk": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "speak"
+        },
+        "source": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "gesture", "default": "person"}, {"source": "pose", "default": "person"}],
+            "optional": true
+        },
+        "person2": {
+            "source": ["gesture", "pose"],
+            "optional": true
+        },
+        "whattosay": {
+            "source": ["talk"],
+            "optional": false
+        }
+    },
+    "vbtell": {
+        "verb": {
+            "source": [{"source": "persInfo", "default": "tellmeet"}, {"source": "objComp", "default": "tellobject"}],
+            "optional": false
+        },
+        "source": {
+            "source": ["location"],
+            "optional": false
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "persInfo", "default": "person"}],
+            "optional": true
+        },
+        "person2": {
+            "source": [{"source": "persInfo", "if": "room",  "default": "person"}],
+            "optional": true
+        },
+        "object1": {
+            "source": ["singCat", {"source": "objComp", "default": "object"}],
+            "optional": true
+        },
+        "object2": {
+            "source": ["objComp"],
+            "optional": true
+        },
+        "whattosay": {
+            "source": ["persInfo"],
+            "optional": true
+        }
+    }
+}

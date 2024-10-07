@@ -1,0 +1,103 @@
+# Instructions
+$task = $vbgo $toLocPrep the $room
+$task = $vbtake $art $object $fromLocPrep the $location
+$task = $vbfind a ($gestPers | $posePers) $inLocPrep the $room
+$task = $vbfind $art $object $inLocPrep the $room
+$task = $vbmeet $name $inLocPrep the $room
+$task = $vbcount $plurCat there are $onLocPrep the $location
+$task = $vbcount ($gestPersPlur | $posePersPlur) are $inLocPrep the $room
+$task = $vbtell me the $persInfo of the person $inLocPrep the $location
+$task = $vbtell me what is the $objComp object $onLocPrep the $location
+$task = $vbtalk $talk $talkPrep the ($gestPers | $posePers) $inLocPrep the $room
+$task = $vbanswer the $questionWord $ofPrsPrep the ($gestPers | $posePers) $inLocPrep the $room
+$task = $vbfollow $name $fromLocPrep the $location $toLocPrep the $room
+$task = $vbguide $name $fromLocPrep the $location $toLocPrep the $room
+$task = $vbguide the ($gestPers | $posePers) $fromLocPrep the $location $toLocPrep the $room
+$task = $vbguide the person wearing a $colorClothe $fromLocPrep the $location $toLocPrep the $room
+$task = $vbbring me $art $object $fromLocPrep the $location
+$task = $vbtell me what is the $objComp $singCat $onLocPrep the $location
+$task = $vbgreet the person wearing $art $colorClothe $inLocPrep the $room
+$task = $vbgreet $name $inLocPrep the $room
+$task = $vbmeet $name $atLocPrep the $location 
+$task = $vbfind them $inLocPrep the $room
+$task = $vbcount people $inLocPrep the $room are wearing $colorClothes
+$task = $vbtell the $persInfo of the person $atLocPrep the $location to the person $atLocPrep the $room
+$task = $vbfollow the ($gestPers | $posePers) ($atLocPrep | $inLocPrep) the $location
+$task = $vbfind {art} $object
+$task = $vbfind the ($gestPers | $posePers)
+$task = $vbmeet {name}
+$task = $vbplace it $onLocPrep the $location
+$task = $vbdeliver it to me
+$task = $vbdeliver it $deliverPrep the ($gestPers | $posePers) $inLocPrep the $room
+$task = $vbdeliver it $deliverPrep {name} $inLocPrep the $room
+$task = $vbtalk {talk}
+$task = $vbanswer a {questionWord}
+$task = $vbfollow them
+$task = $vbfollow them $toLocPrep the $room
+$task = $vbguide them $toLocPrep the $room
+$task = $vbtake it
+
+# Verbs
+$vbtake = take | get | grasp | fetch
+$vbplace = put | place
+$vbdeliver = bring | give | deliver
+$vbbring = bring | give
+$vbgo = go | navigate
+$vbfind = find | locate | look for
+$vbtalk = tell | say
+$vbanswer = answer | reply to
+$vbmeet = meet | contact | get to know | get acquainted with
+$vbtell = tell | say
+$vbgreet = greet | salute | say hello to | introduce yourself to
+$vbremember = meet | contact | get to know | get acquainted with
+$vbcount = tell me how many | count how many
+$vbdescribe = tell me how | describe
+$vboffer = offer | give
+$vbfollow = follow | trail
+$vbguide = guide | escort | take | lead
+$vbaccompany = accompany
+
+# Prepositions
+$deliverPrep = to
+$placePrep = on
+$inLocPrep = $locationPrep
+$fromLocPrep = from
+$toLocPrep = to
+$atLocPrep = $locationPrep
+$talkPrep = to
+$locationPrep = in | at | on
+$onLocPrep = $locationPrep
+$ofPrsPrep = of
+
+# Articles
+$art = a | an
+
+# Stuff to say
+$talk = something about yourself | the time | what day is today | what day is tomorrow | your teams name | your team's name | your teams country | your team's country | your teams affiliation | your team's affiliation  | the day of the week | the day of the month
+$questionWord = question | quiz
+
+# Information about people
+$persInfo = name | pose | gesture
+
+# Poses
+$gestPers = person $gesture
+$gestPersPlur = persons $gesture
+$gesture = raising their left arm | raising their right arm | pointing to the left | pointing to the right
+
+$posePers = $pose person
+$posePersPlur = $pose persons
+$pose = waving | sitting | standing | lying
+
+# Colors and clothes
+$color = blue | yellow | black | white | red | orange | gray
+$clothe = t-shirt | shirt | blouse | sweater | coat | jacket
+$clothes = {clothe}s
+$colorClothe = $color $clothe
+$colorClothe = a $color $clothe
+$colorClothe = an $color $clothe
+$colorClothes = $color $clothes
+$colorClothes = a $color $clothes
+$colorClothes = an $color $clothes
+
+# Relative Object
+$objComp = biggest | largest | smallest | heaviest | lightest | thinnest

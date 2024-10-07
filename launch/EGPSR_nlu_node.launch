@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="transcript_topic" default="/mbot_speech_recognition/transcript" />
+    <arg name="result_topic" default="~dialogue_acts" />
+    <arg name="use_keyword_nlu" default="false" />
+
+    <node  pkg="nlu_rule_based" type="nlu_rule_based_node" name="nlu_rule_based" required="true" output="screen">
+        <param name="~/grammar_path" value="$(find nlu_rule_based)/resources/EGPSR/"/>
+        <param name="~/common_path" value="$(find nlu_rule_based)/resources/common/"/>
+        <param name="~/rules_parent" value="task"/>
+        <param name="~/load_from_xml" value="false"/>
+        <param name="~/transcript_topic" value="$(arg transcript_topic)"/>
+        <param name="~/result_topic" value="$(arg result_topic)"/>
+        <param name="~/use_keyword_nlu" value="$(arg use_keyword_nlu)"/>
+    </node>
+</launch>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+    <category name="cleaning supplies" defaultLocation="shelf" room="kitchen">
+        <object name="sponge"            geometry="parallelepiped" detectron_name="sponge"                        />
+        <object name="mini sponge"       geometry="parallelepiped" detectron_name="mini_sponge"                   />
+    </category>
+
+    <category name="drinks" defaultLocation="coffee table" room="living room">
+        <object name="water bottle"      geometry="cylinder"       detectron_name="water_bottle"   canPour="true" />
+        <object name="red wine"          geometry="cylinder"       detectron_name="red_wine"       canPour="true" />
+        <object name="cola"              geometry="cylinder"       detectron_name="cola"           canPour="true" />
+        <object name="redbull"           geometry="cylinder"       detectron_name="redbull"        canPour="true" />
+        <object name="rodeo"             geometry="cylinder"       detectron_name="rodeo"          canPour="true" />
+        <object name="milk"              geometry="cylinder"       detectron_name="milk"           canPour="true" />
+    </category>
+
+    <category name="food" defaultLocation="shelf" room="kitchen">
+        <object name="spam"              geometry="parallelepiped" detectron_name="spam"                          />
+        <object name="mustard"           geometry="parallelepiped" detectron_name="mustard"                       />
+        <object name="strawberry jello"  geometry="parallelepiped" detectron_name="strawberry_jello"              />
+        <object name="strawberry giallo" nlu_name="strawberry jello"  geometry="parallelepiped" detectron_name="strawberry_jello"              />
+        <object name="strawberry yellow" nlu_name="strawberry jello"  geometry="parallelepiped" detectron_name="strawberry_jello"              />
+        <object name="chocolate jello"   geometry="parallelepiped" detectron_name="chocolate_jello"               />
+        <object name="chocolate giallo" nlu_name="chocolate jello"   geometry="parallelepiped" detectron_name="chocolate_jello"               />
+        <object name="chocolate yellow" nlu_name="chocolate jello"   geometry="parallelepiped" detectron_name="chocolate_jello"               />
+    </category>
+
+    <category name="fruits" defaultLocation="shelf" room="kitchen">
+        <object name="pear"              geometry="sphere"         detectron_name="pear"                          />
+        <object name="peach"             geometry="sphere"         detectron_name="peach"                         />
+        <object name="lemon"             geometry="sphere"         detectron_name="lemon"                         />
+        <object name="orange"            geometry="sphere"         detectron_name="orange"                        />
+        <object name="strawberry"        geometry="sphere"         detectron_name="strawberry"                    />
+        <object name="banana"            geometry="cylinder"       detectron_name="banana"                        />
+    </category>
+    
+    <category name="toys" defaultLocation="coffe table" room="living room">
+        <object name="tennis ball"       geometry="sphere"         detectron_name="tennis_ball"                   />
+        <object name="soccer ball"       geometry="sphere"         detectron_name="soccer_ball"                   />
+        <object name="baseball"          geometry="sphere"         detectron_name="baseball"                      />
+        <object name="softball"          geometry="sphere"         detectron_name="softball"                      />
+    </category>
+
+    <category name="snacks" defaultLocation="side table" room="living room">
+        <object name="pringles"          geometry="cylinder"       detectron_name="pringles"                      />
+        <object name="cotton flakes"     geometry="parallelepiped" detectron_name="cereals" nlu_name="cornflakes" />
+        <object name="cornflakes"        geometry="parallelepiped" detectron_name="cereals"                       />
+        <object name="cheez-its"         geometry="parallelepiped" detectron_name="cheezit" nlu_name="cheezit"    />
+        <object name="cheezit"           geometry="parallelepiped" detectron_name="cheezit"                       />
+    </category>
+
+    <category name="dishes" defaultLocation="kitchen table" room="kitchen">
+        <object name="spoon"             geometry="parallelepiped" detectron_name="spoon"                         />
+        <object name="plate"             geometry="cylinder"       detectron_name="plate"   canPlaceOn="true"     />
+        <object name="cup"               geometry="cylinder"       detectron_name="cup"     canPourIn="true"      />
+        <object name="fork"              geometry="parallelepiped" detectron_name="fork"                          />
+        <object name="bowl"              geometry="spherical_cap"  detectron_name="bowl"    canPourIn="true"      />
+        <object name="knife"             geometry="parallelepiped" detectron_name="knife"                         />
+    </category>
+</categories>

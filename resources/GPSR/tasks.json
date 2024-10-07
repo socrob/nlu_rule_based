@@ -1,0 +1,480 @@
+{
+    "vbdeliver": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "deliver"
+        },
+        "destination": {
+            "source": ["room", "beacon"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "gesture", "default": "person"}, "name"],
+            "optional": false,
+            "default": "operator"
+        },
+        "person2": {
+            "source": ["gesture"],
+            "optional": true
+        },
+        "object1": {
+            "source": ["object", "category", "object?"],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "vbspeak": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "speak"
+        },
+        "source": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "gesture", "default": "person"}],
+            "optional": true
+        },
+        "person2": {
+            "source": ["gesture"],
+            "optional": true
+        },
+        "whattosay": {
+            "source": ["whattosay"],
+            "optional": false
+        }
+    },
+    "talk": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "speak"
+        },
+        "source": {
+            "source": ["room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "gesture", "default": "person"}],
+            "optional": true
+        },
+        "person2": {
+            "source": ["gesture"],
+            "optional": true
+        },
+        "whattosay": {
+            "source": ["talk"],
+            "optional": false
+        }
+    },
+    "vbbtake": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "take"
+        },
+        "source": {
+            "source": ["room"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["placement 2", {"source": "taxi", "default": "taxi"}],
+            "optional": false
+        },
+        "object1": {
+            "source": ["aobject", "kobject", {"source": "luggage", "default": "luggage"}],
+            "optional": false
+        }
+    },
+    "vbcleanup": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "cleanup"
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        }
+    },
+    "vbfind": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "find"
+        },
+        "object1": {
+            "source": ["object", "category", "aobject?"],
+            "optional": true
+        },
+        "person1": {
+            "source": [
+                {"source": "pgenders", 
+                "case": {
+                    "man": "man",
+                    "woman": "woman",
+                    "boy": "man",
+                    "girl": "woman",
+                    "male person": "man",
+                    "female person": "woman"
+                    }
+                },
+                {"source": "gesture", "default": "person"},
+                {"source": "pose", "default": "person"}
+            ],
+            "optional": true
+        },
+        "person2": {
+            "source": [
+                "gesture",
+                {"source": "pose", 
+                "case": {
+                    "sitting": "sitting",
+                    "standing": "standing",
+                    "lying down": "lying"
+                    }
+                }
+            ],
+            "optional": true
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false,
+            "default": {"prev_fact": "destination"}
+        },
+        "whattosay":{
+            "source": ["three"],
+            "optional": true
+        }
+    },
+    "vbgopl": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "gopl"
+        },
+        "destination": {
+            "source": ["placement 1", "beacon 1", "room 1"],
+            "optional": false
+        }
+    },
+    "vbguide": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "guide"
+        },
+        "source": {
+            "source": ["beacon 1"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["beacon 2", {"source": "taxi", "default": "taxi"}, {"source": "back", "prev_fact": "destination"}],
+            "optional": true
+        },
+        "person1": {
+            "source": ["name 1", {"source": "pron", "prev_fact": "person1"}],
+            "optional": false
+        }
+    },
+    "vbmeet": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "meet"
+        },
+        "destination": {
+            "source": [
+                "beacon", 
+                "beacon 1", 
+                {"source": " front | (back) | main | rear ", 
+                "case": {
+                    "front": "entrance",
+                    "main": "entrance",
+                    "back": "exit",
+                    "rear": "exit"
+                    }
+                }
+            ],
+            "optional": false
+        },
+        "person1": {
+            "source": ["name", "name 1"],
+            "optional": false
+        }
+    },
+    "vbplace": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "place"
+        },
+        "destination": {
+            "source": ["placement 2"],
+            "optional": false
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "vbserve": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "serve"
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        },
+        "person1": {
+            "source": [
+                {"source": "people | men | women | guests | elders | children", 
+                "case": {"guests": "people"}
+                },
+                "people | men | women | guests | elders | children",
+                {"source": "phpeople", 
+                "default": "people"
+                }
+            ],
+            "optional": false
+        },
+        "object1": {
+            "source": ["drinks | snacks"],
+            "optional": false
+        }
+    },
+    "vbtake": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "take"
+        },
+        "source": {
+            "source": ["placement 1"],
+            "optional": true
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": false
+        }
+    },
+    "vbtakeout": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "takeout"
+        },
+        "object1": {
+            "source": [],
+            "optional": false,
+            "default": "garbage"
+        }
+    },
+    "vbextrafollow": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "follow"
+        },
+        "source": {
+            "source": ["beacon 1"],
+            "optional": true
+        },
+        "destination": {
+            "source": ["room 2"],
+            "optional": true
+        },
+        "person1": {
+            "source": ["name 1", {"source": "pron", "prev_fact": "person1"}],
+            "optional": false
+        }
+    },
+    "vbextraintroduce": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "introduce"
+        },
+        "destination": {
+            "source": ["beacon 2", "room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [{"source": "pron", "prev_fact": "person1"}],
+            "optional": false
+        },
+        "person2": {
+            "source": [
+                "name 2",
+                {"source": "people | men | women | guests | elders | children", 
+                "case": {"guests": "people"}
+                },
+                {"source": "phpeople", 
+                "default": "people"
+                }
+            ],
+            "optional": false
+        }
+    },
+    "vbextrameet": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "meet"
+        },
+        "destination": {
+            "source": ["beacon 1"],
+            "optional": false,
+            "default": {"prev_fact": "destination"}
+        },
+        "person1": {
+            "source": ["name 1"],
+            "optional": false
+        }
+    },
+    "vbextraask": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "askleave"
+        },
+        "person1": {
+            "source": [{"source": "pron", "prev_fact": "person1"}],
+            "optional": false
+        }
+    },
+    "may | can | will": {
+        "source": {
+            "source": ["beacon 1"],
+            "optional": false
+        }
+    },
+    "vbbring": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "bring"
+        },
+        "source": {
+            "source": ["placement", "placement 2"],
+            "optional": true
+        },
+        "person1": {
+            "source": [],
+            "optional": false,
+            "default": "operator"
+        },
+        "object1": {
+            "source": ["relpos", "object | {category}", "aobject", "object", "category", "object?"],
+            "optional": false,
+            "default": "object"
+        },
+        "object2": {
+            "source": ["oprop", {"source": "object", "if": "relpos"}, "left | right", "abspos"],
+            "optional": true
+        }
+    },
+    "how many": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "tellcount"
+        },
+        "destination": {
+            "source": ["placement", "room"],
+            "optional": true
+        },
+        "person1": {
+            "source": [
+                {"source": "pgenderp", 
+                "case": {
+                    "men": "men",
+                    "women": "women",
+                    "boys": "men",
+                    "girls": "women",
+                    "male": "men",
+                    "female": "women"
+                    }
+                },
+                {"source": "pose", "default": "person"}
+            ],
+            "optional": true
+        },
+        "person2": {
+            "source": [{"source": "pose", 
+            "case": {
+                "sitting": "sitting",
+                "standing": "standing",
+                "lying down": "lying"
+                }
+            }],
+            "optional": true
+        },
+        "object1": {
+            "source": ["object", "category"],
+            "optional": true
+        }
+    },
+    "name | gender | pose": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "tellmeet"
+        },
+        "person1": {
+            "source": [],
+            "optional": false,
+            "default": "person"
+        },
+        "source": {
+            "source": ["beacon", "room"],
+            "optional": false
+        },
+        "whattosay": {
+            "source": ["name | gender | pose"],
+            "optional": false
+        }
+    },
+    "vbextratell": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "tellobject"
+        },
+        "source": {
+            "source": ["placement", "placement 1"],
+            "optional": false
+        },
+        "object1": {
+            "source": ["objects | {category}", "category"],
+            "optional": false,
+            "default": "object"
+        },
+        "object2": {
+            "source": ["oprop"],
+            "optional": false
+        },
+        "whattosay": {
+            "source": ["three"],
+            "optional": true
+        }
+    },
+    "vbextraanswer": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "speak"
+        },
+        "whattosay": {
+            "source": [],
+            "optional": false,
+            "default": "answer a question"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	This is an example file for testing the generators.
+	The real information used in Montreal 2018 will be published
+	and distributed by the Organizing Committee during Setup days
+//-->
+<categories>
+	<category name="cutlery"    defaultLocation="dining table" room="dining room">
+		<object name="fork"     type="alike" difficulty="high" />
+		<object name="knife"    type="alike" difficulty="high" />
+		<object name="spoon"    type="alike" difficulty="high" />
+	</category>
+
+	<category name="drinks"         defaultLocation="counter" room="kitchen">
+		<object name="bottle" type="alike" difficulty="easy" canPour="true" />
+		<object name="milk" type="alike" difficulty="easy" canPour="true" />
+	</category>
+
+	<category name="tableware"  defaultLocation="counter" room="kitchen">
+		<object name="bowl"     type="alike" difficulty="moderate" canPourIn="true"  />
+		<object name="cup"    	type="alike" difficulty="moderate" canPourIn="true"  />
+	</category>
+
+</categories>
+
+<!--
+	CUSTOM SIM "TOMAR"
+	<categories>
+
+	<category name="pantry items" defaultLocation="shelves" room="office">
+		<object name="tray"     type="special" difficulty="high"      canPlaceOn="true" twoHands="true"  />
+		<object name="basket"   type="special" difficulty="high"      canPlaceIn="true" twoHands="true"  />
+		<object name="bag"      type="special" difficulty="easy"      canPlaceIn="true"                  />
+	</category>
+
+	<category name="cutlery"    defaultLocation="work station" room="kitchen">
+		<object name="fork"     type="alike" difficulty="high" />
+		<object name="knife"    type="alike" difficulty="high" />
+		<object name="spoon"    type="alike" difficulty="high" />
+	</category>
+
+	<category name="drinks"         defaultLocation="desk" room="office">
+		<object name="chocolate drink" type="alike" difficulty="easy" canPour="true" />
+		<object name="coke"            type="alike" difficulty="easy" canPour="true" />
+		<object name="grape juice"     type="alike" difficulty="easy" canPour="true" />
+		<object name="orange juice"    type="alike" difficulty="easy" canPour="true" />
+		<object name="sprite"          type="alike" difficulty="easy" canPour="true" />
+	</category>
+
+	<category name="food"       defaultLocation="cupboard" room="kitchen">
+		<object name="cereal"   type="alike" difficulty="easy" />
+		<object name="noodles"  type="alike" difficulty="easy" />
+		<object name="sausages" type="alike" difficulty="easy" />
+	</category>
+
+	<category name="fruits"     defaultLocation="desk" room="office">
+		<object name="apple"    type="alike" difficulty="moderate" />
+		<object name="orange"   type="alike" difficulty="moderate" />
+		<object name="paprika"  type="alike" difficulty="moderate" />
+	</category>
+
+	<category name="snacks"         defaultLocation="tv table" room="living room">
+		<object name="pringles"     type="alike" difficulty="easy" />
+		<object name="crackers"     type="alike" difficulty="easy" />
+		<object name="potato chips" type="alike" difficulty="easy" />
+	</category>
+
+	<category name="tableware"  defaultLocation="side table" room="office">
+		<object name="dish"     type="alike" difficulty="moderate" canPlaceOn="true" />
+		<object name="bowl"     type="alike" difficulty="moderate" canPourIn="true"  />
+		<object name="cup"    	type="alike" difficulty="moderate" canPourIn="true"  />
+	</category>
+-->
+
+

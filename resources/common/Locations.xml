@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This is an example file for testing the generators.
+  The real information used in Montreal 2018 will be published
+  and distributed by the Organizing Committee during Setup days
+//-->
+<rooms>
+  <room name="bedroom">
+    <location name="bedroom" isBeacon="true" isPlacement="true" />
+    <location name="bed" isBeacon="true" isPlacement="true" />
+    <location name="night stand" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="living room">
+    <location name="living room" isBeacon="true" isPlacement="true" />
+    <location name="instruction point" isBeacon="true" isPlacement="true" />
+    <location name="side table" isBeacon="true" isPlacement="true" />
+    <location name="coffee table" isBeacon="true" isPlacement="true" />
+    <location name="tv table" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="kitchen">
+    <location name="kitchen" isBeacon="true" isPlacement="true" />
+    <location name="kitchen table" isBeacon="true" isPlacement="true" />
+    <location name="counter" isBeacon="true" isPlacement="true"/>
+    <location name="shelf" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="dining room">
+    <location name="dining room" isBeacon="true" isPlacement="true" />
+    <location name="dining table" isBeacon="true" isPlacement="true" />
+  </room>
+</rooms>
+
+
+<!-- 
+  CUSTOM SIM "TOMAR"
+  <rooms>
+  <room name="bedroom">
+    <location name="bedroom" isBeacon="true" isPlacement="true" />
+    <location name="bed" isBeacon="true" isPlacement="true" />
+    <location name="night stand" isBeacon="true" isPlacement="true" />
+    <location name="closet" isBeacon="true" isPlacement="true"/>
+  </room>
+  <room name="living room">
+    <location name="living room" isBeacon="true" isPlacement="true" />
+    <location name="entrance" isBeacon="true" isPlacement="true" />
+    <location name="instruction point" isBeacon="true" isPlacement="true" />
+    <location name="operator" isBeacon="true" isPlacement="true" />
+    <location name="couch" isBeacon="true" isPlacement="true"/>
+    <location name="sofa" isBeacon="true" isPlacement="true" />
+    <location name="easy chair" isBeacon="true" isPlacement="true" />
+    <location name="arm chair" isBeacon="true" isPlacement="true" />
+    <location name="tv table" isBeacon="true" isPlacement="true" />
+    <location name="tv stand" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="kitchen">
+    <location name="kitchen" isBeacon="true" isPlacement="true" />
+    <location name="kitchen table" isBeacon="true" isPlacement="true" />
+    <location name="work station" isBeacon="true" isPlacement="true"/>
+    <location name="sink" isBeacon="true" isPlacement="true" />
+    <location name="fridge" isBeacon="true" isPlacement="true" />
+    <location name="cabinet" isBeacon="true" isPlacement="true" />
+    <location name="side board" isBeacon="true" isPlacement="true" />
+    <location name="dishwasher" isBeacon="true" isPlacement="true" />
+  </room>
+  <room name="office">
+    <location name="office" isBeacon="true" isPlacement="true" />
+    <location name="shelves" isBeacon="true" isPlacement="true" />
+    <location name="desk" isBeacon="true" isPlacement="true" />
+    <location name="side table" isBeacon="true" isPlacement="true" />
+    <location name="coat rack" isBeacon="true" isPlacement="true" />
+    <location name="exit" isBeacon="true" isPlacement="true"/>
+  </room>
+</rooms>
+
+-->

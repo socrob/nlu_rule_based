@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import nlu_rule_based_ros.nlu_node
+
+if __name__ == '__main__':
+ nlu_rule_based_ros.nlu_node.main()
