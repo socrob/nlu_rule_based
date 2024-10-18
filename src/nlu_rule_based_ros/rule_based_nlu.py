@@ -1,20 +1,29 @@
 import re
 from xml.dom import minidom
-from gpsr_speech_processing.speech_command_division import CommandDivision
+from nlu_rule_based_ros.speech_command_division import CommandDivision
 import json
 
 import rospy
 from nlu_rule_based.msg import nlu_msg
-from actions_tiago_ros.tiago_api import TiagoAPI
+
+try:
+    from actions_tiago_ros.tiago_api import TiagoAPI
+    API_AVAILABLE = True
+
+except ModuleNotFoundError:
+    API_AVAILABLE = False
+
 
 class RuleBasedNLU():
     # Regex to detect things inside parentheses, brackets or words that start with $
     pattern = r"\{([^{}]+)\}|\$(\w+)+"
     
-    def __init__(self):
+    def __init__(self, init_tiago_api=API_AVAILABLE):
         self.regex_patterns = {}
         self.repeated_words = {}
-        self.tiago_api = TiagoAPI()
+
+        if init_tiago_api:
+            self.tiago_api = TiagoAPI()
 
     def get_word_options(self, word, nlu_name):
         words = word.split(" ")
@@ -162,12 +171,18 @@ class RuleBasedNLU():
 
         rospy.logdebug(self.grammar_rules)
 
-        # Start command division class
-        self.command_division = CommandDivision()
+        # Create a list with all the verbs
+        verbs = []
+        for rule in self.grammar_rules:
+            if rule.startswith("vb"):
+                verbs += self.grammar_rules[rule]
 
-        # self.command_division.readRules(path_list)
-        self.command_division.verbs += self.extra_verbs
-        self.command_division.verbs.sort()
+        verbs += self.extra_verbs
+
+        rospy.logdebug(f"Loaded verbs: {verbs}")
+
+        # Start command division class
+        self.command_division = CommandDivision(verbs=verbs)
 
     def read_xml(self, locations_path, names_path, objects_path, gestures_path):
         # Import locations
