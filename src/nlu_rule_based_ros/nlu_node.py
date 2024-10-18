@@ -1,17 +1,16 @@
 import rospy
-import rospkg
 
 from nlu_rule_based.msg import nlu_msg
-from google_speech_recognition.msg import ASRNBestList
+from socrob_speech_msgs.msg import ASRNBestList
 
-from .rule_based_nlu import RuleBasedNLU
+from nlu_rule_based_ros.rule_based_nlu import RuleBasedNLU
 
 from os import listdir
 
 class NLU_node():
     def __init__(self):
         rospy.init_node("NLU_node", 
-                        # log_level=rospy.DEBUG
+                        log_level=rospy.DEBUG
                         )
 
         # Initialize subscriber of transcript and publisher
@@ -22,14 +21,14 @@ class NLU_node():
 
         self.rate = rospy.Rate(2)
 
-        # Initialize NLU
-        self.nlu = RuleBasedNLU()
-
         # Get the path of the directory with the grammar files from parameter server
         grammar_path = rospy.get_param("~grammar_path")
         common_path = rospy.get_param("~common_path")
         rules_parent = rospy.get_param("~rules_parent")
         load_from_xml = rospy.get_param("~load_from_xml", True)
+
+        # Initialize NLU
+        self.nlu = RuleBasedNLU(init_tiago_api=not load_from_xml)
         
         # Get paths of grammar files
         file_path = [
