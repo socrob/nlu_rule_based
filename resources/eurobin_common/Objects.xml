@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+    <category name="cleaning supplies">
+        <object name="cleanser" />
+        <object name="sponge" />
+    </category>
+
+    <category name="dishes">
+        <object name="bowl" />
+        <object name="plate" />
+        <object name="mug" />
+        <object name="fork" />
+        <object name="knife" />
+        <object name="spoon" />
+    </category>
+
+    <category name="food">
+        <object name="chocolate jello" />
+        <object name="strawberry jello" />
+        <object name="coffee grounds" />
+        <object name="mustard" />
+        <object name="spam" />
+        <object name="sugar" />
+        <object name="tomato soup" />
+        <object name="tuna" />
+    </category>
+
+    <category name="fruits">
+        <object name="apple" />
+        <object name="banana" />
+        <object name="lemon" />
+        <object name="orange" />
+        <object name="peach" />
+        <object name="pear" />
+        <object name="plum" />
+        <object name="strawberry" />
+    </category>
+
+    <category name="snacks">
+        <object name="cheezit" />
+        <object name="cornflakes" />
+        <object name="pringles" />
+    </category>
+
+    <category name="toys">
+        <object name="baseball" />
+        <object name="dice" />
+        <object name="rubiks cube" />
+        <object name="soccer ball" />
+        <object name="tennis ball" />
+    </category>
+</categories>

@@ -1,0 +1,22 @@
+# Instructions
+$task = {takeVerb} the {object} {fromLocPrep} the {location}
+$task = {placeVerb} it {onLocPrep} the {location}
+$task = {deliverVerb} it {deliverPrep} person {inLocPrep} the {room}
+
+# Verbs
+$takeVerb = pick | take
+$placeVerb = place | drop
+$deliverVerb = give | deliver
+
+# Prepositions
+$deliverPrep = to
+$placePrep = on
+$inLocPrep = in
+$fromLocPrep = from
+$toLocPrep = to
+$atLocPrep = at
+$talkPrep = to
+$locPrep = in | at
+$onLocPrep = on
+$arePrep = are
+$ofPrsPrep = of

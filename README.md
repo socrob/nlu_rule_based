@@ -61,9 +61,9 @@ roslaunch nlu_rule_based new_GPSR_nlu_node.launch
 
 This will launch the NLU for the current [RoboCup@Home GPSR Command Generator](https://github.com/johaq/CommandGenerator). Other launch files are available:
 
-- `launch/GPSR_nlu_node.launch` - Launches the NLU for the [old GPSR task](https://github.com/kyordhel/GPSRCmdGen)
-- `launch/EGPSR_nlu_node.launch` - Launches the NLU for the [old EGPSR task](https://github.com/kyordhel/GPSRCmdGen)
-- NLU for the euROBIN Coopetition coming soon.
+- `GPSR_nlu_node.launch` - Launches the NLU for the [old GPSR task](https://github.com/kyordhel/GPSRCmdGen)
+- `EGPSR_nlu_node.launch` - Launches the NLU for the [old EGPSR task](https://github.com/kyordhel/GPSRCmdGen)
+- `eurobin_coopetition_nlu_node.launch` - Launches the NLU for the [euROBIN Coopetition](https://github.com/IRS-group/euRobinCoopetitionCmdGenerator).
 
 ## Launch file arguments
 - `transcript_topic` - The topic that the nlu node will subscribe for command transcripts. The topic should publish using the `socrob_speech_msgs/ASRHypothesis` message type.

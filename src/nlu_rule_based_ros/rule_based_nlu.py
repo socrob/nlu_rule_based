@@ -185,52 +185,95 @@ class RuleBasedNLU():
         self.command_division = CommandDivision(verbs=verbs)
 
     def read_xml(self, locations_path, names_path, objects_path, gestures_path):
-        # Import locations
-        locations_xml = minidom.parse(locations_path)
+        """
+        Reads and parses XML files to populate grammar rules for locations, names, objects, and gestures.
 
-        # Read rooms
-        for elem in locations_xml.getElementsByTagName("room"):
-            # self.grammar_rules["room"].append(elem.getAttribute("name"))
+        Args:
+            locations_path (str): Path to the XML file containing location data.
+            names_path (str): Path to the XML file containing names data.
+            objects_path (str): Path to the XML file containing objects data.
+            gestures_path (str): Path to the XML file containing gestures data.
 
-            self.grammar_rules["location"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+        Populates:
+            self.grammar_rules (dict): A dictionary containing grammar rules for:
+            - "location": List of location names and NLU names.
+            - "name": List of names.
+            - "object": List of object names and NLU names.
+            - "object where canPourIn=true": List of objects that can be poured into.
+            - "object where canPour=true": List of objects that can pour.
+            - "object special where canPlaceIn=true": List of special objects that can be placed into.
+            - "category": List of object categories.
+            - "gesture": List of gestures.
+        """
 
-        # Read locations
-        for elem in locations_xml.getElementsByTagName("location"):
-            self.grammar_rules["location"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+        try:
+            # Import locations
+            locations_xml = minidom.parse(locations_path)
 
-        # Import names
-        names_xml = minidom.parse(names_path)
+            # Read rooms
+            for elem in locations_xml.getElementsByTagName("room"):
+                self.grammar_rules["location"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
 
-        # Read names
-        for elem in names_xml.getElementsByTagName("name"):
-            self.grammar_rules["name"].append(elem.firstChild.data.lower())
+            # Read locations
+            for elem in locations_xml.getElementsByTagName("location"):
+                self.grammar_rules["location"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
 
-        # Import objects
-        objects_xml = minidom.parse(objects_path)
+            rospy.loginfo("Locations successfully loaded from XML.")
 
-        # Read objects
-        for elem in objects_xml.getElementsByTagName("object"):
-            self.grammar_rules["object"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+        except FileNotFoundError:
+            rospy.loginfo("No file found with locations.")
 
-            if elem.getAttribute("canPourIn") == "true":
-                self.grammar_rules["object where canPourIn=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
-                  
-            if elem.getAttribute("canPour") == "true":
-                self.grammar_rules["object where canPour=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+        try:
+            # Import names
+            names_xml = minidom.parse(names_path)
 
-            if elem.getAttribute("canPlaceIn") == "true" and elem.getAttribute("type") == "special":
-                self.grammar_rules["object special where canPlaceIn=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
-                
-        # Read categories
-        for elem in objects_xml.getElementsByTagName("category"):
-            self.grammar_rules["category"].append(elem.getAttribute("name"))
+            # Read names
+            for elem in names_xml.getElementsByTagName("name"):
+                self.grammar_rules["name"].append(elem.firstChild.data.lower())
 
-        # Import gestures
-        gestures_xml = minidom.parse(gestures_path)
+            rospy.loginfo("Names successfully loaded from XML.")
 
-        # Read gestures
-        for elem in gestures_xml.getElementsByTagName("gesture"):
-            self.grammar_rules["gesture"].append(elem.getAttribute("name"))
+        except FileNotFoundError:
+            rospy.loginfo("No file found with names.")
+
+        try:
+            # Import objects
+            objects_xml = minidom.parse(objects_path)
+
+            # Read objects
+            for elem in objects_xml.getElementsByTagName("object"):
+                self.grammar_rules["object"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+
+                if elem.getAttribute("canPourIn") == "true":
+                    self.grammar_rules["object where canPourIn=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+
+                if elem.getAttribute("canPour") == "true":
+                    self.grammar_rules["object where canPour=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+
+                if elem.getAttribute("canPlaceIn") == "true" and elem.getAttribute("type") == "special":
+                    self.grammar_rules["object special where canPlaceIn=true"] += self.get_word_options(elem.getAttribute("name"), elem.getAttribute("nlu_name"))
+
+            # Read categories
+            for elem in objects_xml.getElementsByTagName("category"):
+                self.grammar_rules["category"].append(elem.getAttribute("name"))
+
+            rospy.loginfo("Objects successfully loaded from XML.")
+
+        except FileNotFoundError:
+            rospy.loginfo("No file found with objects.")
+
+        try:
+            # Import gestures
+            gestures_xml = minidom.parse(gestures_path)
+
+            # Read gestures
+            for elem in gestures_xml.getElementsByTagName("gesture"):
+                self.grammar_rules["gesture"].append(elem.getAttribute("name"))
+
+            rospy.loginfo("Gestures successfully loaded from XML.")
+
+        except FileNotFoundError:
+            rospy.loginfo("No file found with gestures.")
 
     def read_from_semantic_map(self):
         semantic_map = self.tiago_api.semantic_map.get_semantic_map()
