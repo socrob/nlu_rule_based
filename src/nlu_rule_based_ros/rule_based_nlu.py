@@ -26,11 +26,30 @@ class RuleBasedNLU():
             self.tiago_api = TiagoAPI()
 
     def get_word_options(self, word, nlu_name):
+        """
+        Generates a list of word options and updates the repeated_words dictionary
+        with the provided NLU name or the word itself.
+
+        Args:
+            word (str): The input word to generate options for.
+            nlu_name (str): The NLU name to associate with the word options.
+
+        Returns:
+            list: A list of word options including the original word, a concatenated
+            version if the word contains spaces and common ASR misspellings of the word.
+        """
         words = word.split(" ")
         options_list = [word]
 
+        # If the word contains more are more than one word, add a concatenated version
+        # This is done to try to fix mistakes like spelling bedroom as bed room
         if len(words) > 1:
             options_list.append("".join(words))
+
+        # Add common ASR misspellings of the word
+        options_list += rospy.get_param(f"tiago_speech_recognition/asr_errors/{word}", [])
+
+        rospy.logdebug(f"Word options for '{word}': {options_list}")
 
         # Define the translation for every option
         for option in options_list:
@@ -276,6 +295,7 @@ class RuleBasedNLU():
             rospy.loginfo("No file found with gestures.")
 
     def read_from_semantic_map(self):
+        # FIXME: Get the ASR errors also here
         semantic_map = self.tiago_api.semantic_map.get_semantic_map()
         self.grammar_rules["location"] = self.tiago_api.semantic_map.get_available_location_names()
         self.grammar_rules["name"] = semantic_map.names
