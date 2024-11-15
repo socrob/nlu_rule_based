@@ -28,8 +28,10 @@ class NLU_node():
         load_from_xml = rospy.get_param("~load_from_xml", True)
 
         # Initialize NLU
-        self.nlu = RuleBasedNLU(init_tiago_api=not load_from_xml)
-        
+        self.nlu = RuleBasedNLU(
+            asr_error_source=rospy.get_param("~asr_error_source", "tiago_speech_recognition/common_asr_errors"),
+            init_tiago_api=not load_from_xml)
+
         # Get paths of grammar files
         file_path = [
             grammar_path + filename 

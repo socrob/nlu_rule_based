@@ -18,9 +18,10 @@ class RuleBasedNLU():
     # Regex to detect things inside parentheses, brackets or words that start with $
     pattern = r"\{([^{}]+)\}|\$(\w+)+"
     
-    def __init__(self, init_tiago_api=API_AVAILABLE):
+    def __init__(self, asr_error_source, init_tiago_api=API_AVAILABLE):
         self.regex_patterns = {}
         self.repeated_words = {}
+        self.asr_error_source = asr_error_source
 
         if init_tiago_api:
             self.tiago_api = TiagoAPI()
@@ -47,7 +48,7 @@ class RuleBasedNLU():
             options_list.append("".join(words))
 
         # Add common ASR misspellings of the word
-        options_list += rospy.get_param(f"tiago_speech_recognition/asr_errors/{word}", [])
+        options_list += rospy.get_param(f"{self.asr_error_source}/{word}", [])
 
         rospy.logdebug(f"Word options for '{word}': {options_list}")
 
