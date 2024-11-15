@@ -1,0 +1,54 @@
+{
+    "deliverVerb": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "deliver"
+        },
+        "destination": {
+            "source": ["room"],
+            "optional": false
+        },
+        "person1": {
+            "source": [],
+            "optional": false,
+            "default": "person"
+        },
+        "object1": {
+            "source": [],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "placeVerb": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "place"
+        },
+        "destination": {
+            "source": ["location"],
+            "optional": false
+        },
+        "object1": {
+            "source": [],
+            "optional": false,
+            "default": {"prev_fact": "object1"}
+        }
+    },
+    "takeVerb": {
+        "verb": {
+            "source": [],
+            "optional": false,
+            "default": "take"
+        },
+        "source": {
+            "source": ["location"],
+            "optional": false
+        },
+        "object1": {
+            "source": ["object"],
+            "optional": false
+        }
+    }
+}

@@ -61,11 +61,20 @@ roslaunch nlu_rule_based new_GPSR_nlu_node.launch
 
 This will launch the NLU for the current [RoboCup@Home GPSR Command Generator](https://github.com/johaq/CommandGenerator). Other launch files are available:
 
-- `launch/GPSR_nlu_node.launch` - Launches the NLU for the [old GPSR task](https://github.com/kyordhel/GPSRCmdGen)
-- `launch/EGPSR_nlu_node.launch` - Launches the NLU for the [old EGPSR task](https://github.com/kyordhel/GPSRCmdGen)
-- NLU for the euROBIN Coopetition coming soon.
+- `GPSR_nlu_node.launch` - Launches the NLU for the [old GPSR task](https://github.com/kyordhel/GPSRCmdGen)
+- `EGPSR_nlu_node.launch` - Launches the NLU for the [old EGPSR task](https://github.com/kyordhel/GPSRCmdGen)
+- `eurobin_coopetition_nlu_node.launch` - Launches the NLU for the [euROBIN Coopetition](https://github.com/IRS-group/euRobinCoopetitionCmdGenerator).
 
 ## Launch file arguments
-- `transcript_topic` - The topic that the nlu node will subscribe for command transcripts. The topic should publish using the `socrob_speech_msgs/ASRHypothesis` message type.
-- `result_topic` - The topic where the nlu node will publish the goals extracted from the command using the `socrob_planning_msgs/nlu_msg` message type.
-- `use_keyword_nlu` - Enables a experimental keyword based NLU. This option will try to, in case of failure of the standard method, try to find verbs, objects and people references to use to infer the goal. Only should be turned on in very simple use cases.
+- `transcript_topic` - Topic for command transcripts. Should publish `socrob_speech_msgs/ASRHypothesis` message type.
+- `result_topic` - Topic for publishing extracted goals. Uses `socrob_planning_msgs/nlu_msg` message type.
+- `use_keyword_nlu` - Enables experimental keyword-based NLU. Attempts to infer goals by identifying verbs, objects, and people references if the standard method fails. Recommended for simple use cases only.
+- `load_from_xml` - Loads NLU rules from an XML file if set to `true`. Should remain `false` unless using the socrob team's private API.
+- `asr_error_source` - ROS parameter for common ASR errors. Helps correct common speech recognition errors. Should contain mappings of correct spellings to common ASR misspellings. Example:
+  ```yaml
+  pear: [bear]
+  crisps: [crisp]
+  pringles: [pringle]
+  tictac: [tic tac]
+  ```
+  If using the [tiago speech recognition module](https://github.com/socrob/tiago_speech_recognition), this parameter will be published to the server when launched.
