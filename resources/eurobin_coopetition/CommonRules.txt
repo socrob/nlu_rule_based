@@ -9,14 +9,14 @@ $placeVerb = place | drop
 $deliverVerb = give | deliver
 
 # Prepositions
-$deliverPrep = to
-$placePrep = on
-$inLocPrep = in
+$deliverPrep = to | to the
+$placePrep = in | at | on
+$inLocPrep = in | at | on
 $fromLocPrep = from
 $toLocPrep = to
-$atLocPrep = at
+$atLocPrep = in | at | on
 $talkPrep = to
-$locPrep = in | at
-$onLocPrep = on
+$locPrep = in | at | on
+$onLocPrep = in | at | on
 $arePrep = are
 $ofPrsPrep = of
