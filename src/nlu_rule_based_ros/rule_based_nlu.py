@@ -4,6 +4,7 @@ from nlu_rule_based_ros.speech_command_division import CommandDivision
 import json
 
 import rospy
+import rospkg
 from nlu_rule_based.msg import nlu_msg
 
 try:
@@ -699,6 +700,11 @@ class RuleBasedNLU():
         # Attribute an id to each pattern for debugging
         for i in range(len(self.patterns)):
             self.patterns[i]["id"] = i
+
+        # Save a file with the patterns for debugging purposes
+        package_path = rospkg.RosPack().get_path('nlu_rule_based')
+        with open(f"{package_path}/patterns.json", "w") as f:
+            json.dump(self.patterns, f, indent=2)
 
     def match_pattern(self, sentence):
         """Matches a sentence to a pattern from the previously compiled list"""
