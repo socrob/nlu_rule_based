@@ -703,6 +703,7 @@ class RuleBasedNLU():
 
         # Save a file with the patterns for debugging purposes
         package_path = rospkg.RosPack().get_path('nlu_rule_based')
+        rospy.loginfo(f"Saving patterns to {package_path}/patterns.json")
         with open(f"{package_path}/patterns.json", "w") as f:
             json.dump(self.patterns, f, indent=2)
 
@@ -712,7 +713,7 @@ class RuleBasedNLU():
 
         for pattern in self.patterns:
             # Find all matches in the input text
-            match = re.match(pattern["pattern"], sentence)
+            match = re.search(pattern["pattern"], sentence)
 
             # Extract facts from the match
             if match:
