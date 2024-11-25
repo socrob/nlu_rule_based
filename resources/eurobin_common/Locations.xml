@@ -2,17 +2,19 @@
   <rooms>
     <room name="DLR Kitchen">
       <location name="DLR dishwasher" isPlacement="true" />
-      <location name="DLR cabinet" isPlacement="true" />
-      <location name="DLR bin" isPlacement="false" />
+      <location name="DLR counter" isPlacement="true" />
+      <location name="DLR drawer" isPlacement="false" />
     </room>
     <room name="KIT Kitchen">
       <location name="KIT dishwasher" isPlacement="true" />
-      <location name="KIT cabinet" isPlacement="true" />
-      <location name="KIT bin" isPlacement="false" />
+      <location name="KIT counter" isPlacement="true" />
+      <location name="KIT drawer" isPlacement="false" />
     </room>
     <room name="INRIA Kitchen">
       <location name="INRIA dishwasher" isPlacement="true" />
       <location name="INRIA cabinet" isPlacement="true" />
-      <location name="INRIA bin" isPlacement="false" />
+      <location name="INRIA drawer" isPlacement="false" />
+      <location name="INRIA counter" isPlacement="false" />
+      <location name="table" isPlacement="false" />
     </room>
   </rooms>
