@@ -40,6 +40,7 @@ class RuleBasedNLU():
             list: A list of word options including the original word, a concatenated
             version if the word contains spaces and common ASR misspellings of the word.
         """
+        word = word.lower()
         words = word.split(" ")
         options_list = [word]
 
