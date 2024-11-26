@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <categories>
+
     <category name="cleaning supplies">
-        <object name="cleanser" />
-        <object name="sponge" />
+        <object name="glass cleanser" />
+        <object name="bleach cleanser" />
+        <object name="hygiene spray" />
+        <object name="toothpaste" />
     </category>
 
     <category name="dishes">
         <object name="bowl" />
         <object name="plate" />
         <object name="mug" />
-        <object name="fork" />
-        <object name="knife" />
-        <object name="spoon" />
     </category>
 
     <category name="food">
+        <object name="cracker box" />
+        <object name="sugar" />
         <object name="chocolate jello" />
         <object name="strawberry jello" />
-        <object name="coffee grounds" />
-        <object name="mustard" />
         <object name="spam" />
-        <object name="sugar" />
+        <object name="coffee" />
+        <object name="pringles" />
+        <object name="mustard" />
         <object name="tomato soup" />
-        <object name="tuna" />
+        <object name="blue salt" />
+        <object name="yellow salt" />
+        <object name="green salt" />
+        <object name="mashed potatoes" />
+        <object name="rusk" />
+        <object name="amicelli" />
+        <object name="raviolli" />
+        <object name="powdered sugar" />
+        <object name="nutella go" />
+        <object name="cereals" />
+        <object name="chocolate bars" />
     </category>
 
     <category name="fruits">
-        <object name="apple" />
         <object name="banana" />
+        <object name="strawberry" />
+        <object name="apple" />
         <object name="lemon" />
-        <object name="orange" />
         <object name="peach" />
         <object name="pear" />
+        <object name="orange" />
         <object name="plum" />
-        <object name="strawberry" />
-    </category>
-
-    <category name="snacks">
-        <object name="cheezit" />
-        <object name="cornflakes" />
-        <object name="pringles" />
     </category>
 
     <category name="toys">
-        <object name="baseball" />
-        <object name="dice" />
-        <object name="rubiks cube" />
         <object name="soccer ball" />
+        <object name="soft ball" />
+        <object name="baseball" />
         <object name="tennis ball" />
+        <object name="racquetball" />
+        <object name="rubiks cube" />
     </category>
 </categories>
