@@ -16,5 +16,7 @@
   <exec_depend>rospy</exec_depend>
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
+  <build_depend>socrob_speech_msgs</build_depend>
+  <build_depend>socrob_planning_msgs</build_depend>
   
 </package>
