@@ -1,6 +1,6 @@
 import rospy
 
-from nlu_rule_based.msg import nlu_msg
+from socrob_planning_msgs.msg import nlu_msg
 from socrob_speech_msgs.msg import ASRNBestList
 
 from nlu_rule_based_ros.rule_based_nlu import RuleBasedNLU

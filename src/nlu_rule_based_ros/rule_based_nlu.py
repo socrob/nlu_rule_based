@@ -5,7 +5,7 @@ import json
 
 import rospy
 import rospkg
-from nlu_rule_based.msg import nlu_msg
+from socrob_planning_msgs.msg import nlu_msg
 
 try:
     from actions_tiago_ros.tiago_api import TiagoAPI
