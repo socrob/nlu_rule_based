@@ -49,7 +49,9 @@ if __name__ == "__main__":
         if filename.endswith(".txt") and filename != "Extra Verbs.txt"
         ]
 
-    nlu = RuleBasedNLU()
+    # Create an instance of the RuleBasedNLU
+    # in this case we are not using ASR so no need to specify the ASR error source
+    nlu = RuleBasedNLU(asr_error_source="")
 
     nlu.read_grammar_files(file_path, 
                            common_path + "Locations.xml", 

@@ -795,7 +795,7 @@ class RuleBasedNLU():
                 self.process_match_keyword_based(result)
 
             else:
-                rospy.logerr("Was not capable to process segment")
+                rospy.logerr(f"Was not capable to process segment: '{result['sentence']}'")
 
         return self.actions
     
